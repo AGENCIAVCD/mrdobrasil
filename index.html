@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MR do Brasil: tecnologia alemã e suporte local para OLTC, monitoramento, buchas, retrofit e serviços técnicos para transformadores.">
+  <meta name="theme-color" content="#ffffff">
+  <title>MR do Brasil | Soluções para Transformadores</title>
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            hpblue: '#0C3A6E',
+            hpblueBright: '#155AA6',
+            hpblueDeep: '#062B55',
+            hpblueSoft: '#E7F0FA',
+            mrred: '#D71920',
+            ink: '#1a1a1a',
+            cloud: '#f7f7f7',
+            fog: '#e8e8e8',
+            steel: '#c2c2c2',
+            graphite: '#636363',
+            charcoal: '#3d3d3d',
+            hairline: '#e8e8e8',
+            coral: '#ff5050'
+          },
+          fontFamily: {
+            sans: ['Manrope', 'Arial', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Manrope', 'Arial', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 2px 8px rgba(26, 26, 26, 0.08)',
+            modal: '0 8px 24px rgba(26, 26, 26, 0.12)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :focus-visible {
+      outline: 2px solid #1a1a1a;
+      outline-offset: 3px;
+    }
+
+    .technical-grid {
+      background-image:
+        linear-gradient(rgba(12, 58, 110, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(12, 58, 110, 0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .video-cover iframe {
+      height: max(100%, 56.25vw);
+      left: 50%;
+      min-height: 100%;
+      min-width: 100%;
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: max(100%, 177.78vh);
+    }
+
+    .video-modal.is-open {
+      display: flex;
+    }
+
+    .chevron {
+      clip-path: polygon(26% 0, 100% 0, 74% 100%, 0 100%);
+    }
+
+    .slash {
+      transform: skewX(-18deg);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-enter {
+      animation: heroEnter 760ms ease both;
+    }
+
+    .hero-enter-2 {
+      animation: heroEnter 760ms ease 120ms both;
+    }
+
+    .hero-enter-3 {
+      animation: heroEnter 760ms ease 220ms both;
+    }
+
+    @keyframes heroEnter {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white font-sans text-ink antialiased">
+  <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-[4px] focus:bg-white focus:px-6 focus:py-3 focus:text-sm focus:font-semibold focus:text-ink focus:shadow-modal">
+    Pular para o conteúdo
+  </a>
+
+  <div class="bg-ink px-4 text-white sm:px-6">
+    <div class="mx-auto flex h-8 max-w-[1366px] items-center justify-between text-[11px] leading-tight text-white/90 sm:h-9 sm:text-sm">
+      <p>Maschinenfabrik Reinhausen no Brasil</p>
+      <div class="flex items-center gap-4">
+        <a href="#contato" class="hidden font-medium text-white underline-offset-4 hover:underline sm:inline">Atendimento técnico-comercial</a>
+        <div class="flex items-center gap-1" aria-label="Selecionar idioma">
+          <button type="button" data-lang-switch="pt" class="lang-button rounded-[4px] px-2 py-1 text-base leading-none transition hover:bg-white/10" aria-label="Português">🇧🇷</button>
+          <button type="button" data-lang-switch="en" class="lang-button rounded-[4px] px-2 py-1 text-base leading-none transition hover:bg-white/10" aria-label="English">🇺🇸</button>
+          <button type="button" data-lang-switch="es" class="lang-button rounded-[4px] px-2 py-1 text-base leading-none transition hover:bg-white/10" aria-label="Español">🇪🇸</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-50 border-b border-hairline bg-white/95 backdrop-blur">
+    <nav class="mx-auto flex h-16 max-w-[1366px] items-center justify-between gap-3 px-4 sm:px-8" aria-label="Navegação principal">
+      <a href="#" class="flex items-center gap-3" aria-label="MR do Brasil - início">
+        <img src="mr_logo_rgb_darkblue.svg" alt="MR do Brasil" class="h-10 w-10 sm:h-11 sm:w-11">
+        <span class="hidden text-base font-semibold text-ink sm:inline">MR do Brasil</span>
+      </a>
+
+      <div class="hidden items-center gap-1 text-sm text-ink lg:flex">
+        <a href="#sobre" class="px-4 py-2 hover:text-hpblue">Sobre a MR</a>
+        <a href="#solucoes" class="px-4 py-2 hover:text-hpblue">Soluções</a>
+        <a href="#diferenciais" class="px-4 py-2 hover:text-hpblue">Diferenciais</a>
+        <a href="#confianca" class="px-4 py-2 hover:text-hpblue">Confiança</a>
+        <a href="#contato" class="px-4 py-2 hover:text-hpblue">Contato</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/5511976553275?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20MR%20do%20Brasil%20sobre%20solu%C3%A7%C3%B5es%20para%20transformadores." target="_blank" rel="noopener" class="hidden h-11 items-center rounded-[4px] border border-ink bg-white px-5 text-sm font-semibold uppercase tracking-[0.07em] text-ink transition hover:bg-cloud sm:inline-flex">
+          WhatsApp
+        </a>
+        <a href="#contato" class="inline-flex h-10 items-center rounded-[4px] bg-hpblue px-3 text-[11px] font-semibold uppercase tracking-[0.06em] text-white transition hover:bg-hpblueDeep sm:h-11 sm:px-5 sm:text-sm">
+          <span class="sm:hidden">Orçamento</span>
+          <span class="hidden sm:inline">Solicitar orçamento</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="relative overflow-hidden bg-white px-4 py-6 sm:px-8 sm:py-12 lg:py-16">
+      <div class="mx-auto max-w-[1366px]">
+        <div class="relative min-h-[680px] overflow-hidden rounded-2xl border border-hairline bg-ink shadow-soft">
+          <div class="video-cover absolute inset-0">
+            <iframe src="https://www.youtube.com/embed/JF3-y80QiUg?autoplay=1&mute=1&controls=0&rel=0&playsinline=1&loop=1&playlist=JF3-y80QiUg&modestbranding=1&enablejsapi=1" title="Vídeo institucional da MR" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,43,85,0.96)_0%,rgba(6,43,85,0.84)_38%,rgba(6,43,85,0.38)_72%,rgba(6,43,85,0.12)_100%)]"></div>
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_24%,rgba(21,90,166,0.55),transparent_34%),linear-gradient(180deg,rgba(0,0,0,0.12),rgba(0,0,0,0.42))]"></div>
+          <div class="absolute left-0 top-0 h-2 w-full bg-[linear-gradient(90deg,#0C3A6E_0%,#0C3A6E_72%,#D71920_72%,#D71920_100%)]"></div>
+
+          <div class="relative flex min-h-[680px] items-end px-6 py-8 sm:px-10 lg:px-14 lg:py-12">
+            <div class="max-w-3xl pb-20 sm:pb-24 lg:pb-20">
+              <div class="hero-enter inline-flex items-center gap-2 rounded-lg bg-white/12 px-3 py-2 text-xs font-medium text-white ring-1 ring-white/18 backdrop-blur sm:text-sm">
+                <span class="h-2 w-2 bg-mrred"></span>
+                Comutação resistiva a vácuo para transformadores
+              </div>
+              <p class="hero-enter mt-6 text-xs font-bold uppercase tracking-[0.22em] text-white/80 sm:mt-8 sm:text-sm">MR do Brasil</p>
+              <h1 class="hero-enter-2 mt-4 font-display text-[38px] font-medium leading-[1.02] tracking-[-0.04em] text-white sm:text-[60px] xl:text-[76px]">
+                Tecnologia Alemã. Suporte Local. Confiança na sua Rede Elétrica.
+              </h1>
+              <p class="hero-enter-3 mt-5 max-w-2xl text-base leading-[1.55] text-white/82 sm:text-lg">
+                Soluções para comutadores de derivação sob carga (OLTC), monitoramento, buchas, retrofit e serviços técnicos com o conhecimento global da Reinhausen e atendimento local em Embu das Artes, SP.
+              </p>
+
+              <div class="hero-enter-3 mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href="#contato" class="inline-flex h-11 items-center justify-center rounded-[4px] bg-white px-6 text-sm font-semibold uppercase tracking-[0.07em] text-hpblue transition hover:bg-hpblueSoft">
+                  Solicitar orçamento
+                </a>
+                <button type="button" id="openVideoModal" class="inline-flex h-11 items-center justify-center gap-3 rounded-[4px] border border-white/70 bg-white/10 px-6 text-sm font-semibold uppercase tracking-[0.07em] text-white backdrop-blur transition hover:bg-white hover:text-hpblue">
+                  <span class="flex h-6 w-6 items-center justify-center rounded-full bg-white text-hpblue">
+                    <i class="fa-solid fa-play text-[10px]" aria-hidden="true"></i>
+                  </span>
+                  Assistir em tela cheia
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute bottom-0 left-0 right-0 grid border-t border-white/15 bg-white/92 backdrop-blur md:grid-cols-3">
+          <div class="border-b border-hairline p-5 md:border-b-0 md:border-r">
+            <p class="text-[28px] font-medium leading-none text-ink">40+ anos</p>
+            <p class="mt-2 text-sm leading-5 text-graphite">Presença local no Brasil</p>
+          </div>
+          <div class="border-b border-hairline p-5 md:border-b-0 md:border-r">
+            <p class="text-[28px] font-medium leading-none text-ink">OLTC</p>
+            <p class="mt-2 text-sm leading-5 text-graphite">Liderança mundial em comutação</p>
+          </div>
+          <div class="p-5">
+            <p class="text-[28px] font-medium leading-none text-ink">SP</p>
+            <p class="mt-2 text-sm leading-5 text-graphite">Suporte técnico em Embu das Artes</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="bg-white px-5 py-16 sm:px-8 lg:py-20">
+      <div class="mx-auto max-w-[1366px]">
+        <div class="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          <div class="reveal lg:sticky lg:top-28">
+            <p class="text-sm font-bold uppercase tracking-[0.18em] text-hpblue">Conheça a MR do Brasil</p>
+            <h2 class="mt-4 font-display text-[36px] font-medium leading-none tracking-[-0.02em] text-ink sm:text-[56px]">
+              A especialista por trás da confiabilidade dos transformadores.
+            </h2>
+            <p class="mt-6 text-lg leading-[1.45] text-charcoal">
+              Fundada em julho de 1980, a Reinhausen do Brasil foi a primeira subsidiária da Maschinenfabrik Reinhausen. Em Embu das Artes, na Região Metropolitana de São Paulo, a unidade atua como centro de competência regional para vendas técnicas, serviços técnicos, treinamento e suporte a transformadores.
+            </p>
+            <p class="mt-4 text-base leading-7 text-charcoal">
+              Com mais de 80 profissionais no site, a equipe local apoia as marcas do Grupo Reinhausen e ajuda clientes a manter transformadores operando com desempenho, segurança e disponibilidade.
+            </p>
+            <div class="mt-8 overflow-hidden rounded-2xl border border-hairline bg-white shadow-soft">
+              <img src="mr-embu-hero.webp" alt="Unidade da MR do Brasil em Embu das Artes com veículos de serviço técnico" class="aspect-[4/3] w-full object-cover">
+              <div class="p-5">
+                <p class="text-sm font-semibold uppercase tracking-[0.16em] text-hpblue">Suporte local em SP</p>
+                <p class="mt-2 text-sm leading-6 text-charcoal">Base técnica em Embu das Artes para atendimento em comutadores, transformadores e serviços de campo.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="reveal rounded-2xl bg-cloud p-6 sm:p-8">
+              <h3 class="text-2xl font-medium leading-tight text-ink">O que a MR do Brasil faz?</h3>
+              <p class="mt-4 text-base leading-7 text-charcoal">
+                A MR apoia empresas que operam, fabricam, modernizam ou mantêm transformadores de potência. Na prática, isso inclui comutadores de derivação sob carga (OLTC), sistemas de controle e monitoramento, acessórios, buchas, diagnóstico, retrofit, comissionamento, manutenção, treinamento técnico e suporte às marcas Reinhausen na região.
+              </p>
+              <div class="mt-6 grid gap-4 md:grid-cols-2">
+                <div class="rounded-2xl bg-white p-5 shadow-soft">
+                  <p class="font-medium text-ink">Para operação e manutenção</p>
+                  <p class="mt-2 text-sm leading-6 text-charcoal">Redução de paradas, diagnóstico de condição, suporte de campo e planejamento de manutenção.</p>
+                </div>
+                <div class="rounded-2xl bg-white p-5 shadow-soft">
+                  <p class="font-medium text-ink">Para engenharia e projetos</p>
+                  <p class="mt-2 text-sm leading-6 text-charcoal">Especificação técnica, retrofit, modernização, acessórios e suporte para novas aplicações.</p>
+                </div>
+                <div class="rounded-2xl bg-white p-5 shadow-soft">
+                  <p class="font-medium text-ink">Para equipes técnicas</p>
+                  <p class="mt-2 text-sm leading-6 text-charcoal">Treinamento, capacitação e transferência de conhecimento para operação mais segura dos ativos.</p>
+                </div>
+                <div class="rounded-2xl bg-white p-5 shadow-soft">
+                  <p class="font-medium text-ink">Para compras e suprimentos</p>
+                  <p class="mt-2 text-sm leading-6 text-charcoal">Apoio técnico para selecionar soluções, peças, serviços e escopos compatíveis com a necessidade do ativo.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal grid gap-6 md:grid-cols-3">
+              <div class="rounded-2xl border border-hairline bg-white p-6">
+                <p class="text-[32px] font-medium leading-none text-hpblue">1980</p>
+                <p class="mt-4 text-base font-medium text-ink">Primeira subsidiária</p>
+                <p class="mt-2 text-sm leading-6 text-charcoal">A operação brasileira nasceu em julho de 1980 como a primeira subsidiária da Maschinenfabrik Reinhausen.</p>
+              </div>
+              <div class="rounded-2xl border border-hairline bg-white p-6">
+                <p class="text-[32px] font-medium leading-none text-hpblue">80+</p>
+                <p class="mt-4 text-base font-medium text-ink">Profissionais</p>
+                <p class="mt-2 text-sm leading-6 text-charcoal">Equipe local dedicada a vendas técnicas, serviços técnicos, treinamento e suporte regional.</p>
+              </div>
+              <div class="rounded-2xl border border-hairline bg-white p-6">
+                <p class="text-[32px] font-medium leading-none text-hpblue">SP</p>
+                <p class="mt-4 text-base font-medium text-ink">Embu das Artes</p>
+                <p class="mt-2 text-sm leading-6 text-charcoal">Base próxima aos principais polos industriais e de infraestrutura do país.</p>
+              </div>
+            </div>
+
+            <div class="reveal rounded-2xl border border-hairline bg-white p-6 sm:p-8">
+              <h3 class="text-2xl font-medium leading-tight text-ink">Centro de competência regional</h3>
+              <p class="mt-4 text-base leading-7 text-charcoal">
+                A unidade brasileira reúne conhecimento técnico, estrutura de atendimento e experiência de campo para apoiar clientes da região em todo o ciclo de vida do transformador: especificação, operação, manutenção, modernização e treinamento.
+              </p>
+              <div class="mt-6 grid gap-4 md:grid-cols-3">
+                <div class="border-l-4 border-hpblue bg-cloud p-5">
+                  <p class="font-medium text-ink">Vendas técnicas</p>
+                  <p class="mt-2 text-sm leading-6 text-charcoal">Apoio para transformar necessidade operacional em escopo técnico adequado.</p>
+                </div>
+                <div class="border-l-4 border-hpblue bg-cloud p-5">
+                  <p class="font-medium text-ink">Serviço técnico</p>
+                  <p class="mt-2 text-sm leading-6 text-charcoal">Atendimento especializado para comutadores, transformadores e sistemas associados.</p>
+                </div>
+                <div class="border-l-4 border-hpblue bg-cloud p-5">
+                  <p class="font-medium text-ink">Treinamento</p>
+                  <p class="mt-2 text-sm leading-6 text-charcoal">Capacitação para equipes que operam e mantêm ativos críticos.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal rounded-2xl bg-hpblue p-6 text-white sm:p-8">
+              <h3 class="text-2xl font-medium leading-tight">Quando faz sentido chamar a MR?</h3>
+              <div class="mt-6 grid gap-5 md:grid-cols-2">
+                <p class="text-sm leading-6 text-white/78"><span class="font-semibold text-white">Falhas recorrentes no OLTC:</span> avaliação técnica, manutenção, peças, diagnóstico e modernização.</p>
+                <p class="text-sm leading-6 text-white/78"><span class="font-semibold text-white">Ativos envelhecidos:</span> retrofit para ampliar vida útil e reduzir risco de indisponibilidade.</p>
+                <p class="text-sm leading-6 text-white/78"><span class="font-semibold text-white">Projetos novos:</span> apoio na especificação de comutadores, buchas, acessórios, controle e monitoramento.</p>
+                <p class="text-sm leading-6 text-white/78"><span class="font-semibold text-white">Equipe em campo:</span> comissionamento, treinamento, suporte técnico e diagnóstico especializado.</p>
+                <p class="text-sm leading-6 text-white/78"><span class="font-semibold text-white">Suporte regional:</span> atendimento para clientes que precisam de orientação técnica sobre marcas e soluções Reinhausen.</p>
+                <p class="text-sm leading-6 text-white/78"><span class="font-semibold text-white">Dúvidas de especificação:</span> análise inicial para entender aplicação, tensão, criticidade, histórico e necessidade de modernização.</p>
+              </div>
+            </div>
+
+            <div class="reveal rounded-2xl border border-hairline bg-white p-6 sm:p-8">
+              <h3 class="text-2xl font-medium leading-tight text-ink">Dúvidas comuns de quem ainda não conhece a MR</h3>
+              <div class="mt-6 space-y-3">
+                <details class="group rounded-2xl border border-hairline bg-cloud p-1 transition open:bg-white open:shadow-soft">
+                  <summary class="flex cursor-pointer list-none items-center gap-4 rounded-[12px] px-4 py-4">
+                    <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-hpblue shadow-soft group-open:bg-hpblue group-open:text-white">
+                      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 8.5h12l1.8 2.8v5.2H4.2v-5.2L6 8.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                        <path d="M8 16.5h8M9 8.5V6.8A1.8 1.8 0 0 1 10.8 5h2.4A1.8 1.8 0 0 1 15 6.8v1.7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                      </svg>
+                    </span>
+                    <span class="flex-1 text-base font-medium text-ink">A MR atende apenas transformadores novos?</span>
+                    <span class="relative h-7 w-7 shrink-0 rounded-full border border-steel bg-white">
+                      <span class="absolute left-1/2 top-1/2 h-px w-3 -translate-x-1/2 -translate-y-1/2 bg-ink"></span>
+                      <span class="absolute left-1/2 top-1/2 h-3 w-px -translate-x-1/2 -translate-y-1/2 bg-ink transition group-open:rotate-90 group-open:opacity-0"></span>
+                    </span>
+                  </summary>
+                  <p class="px-20 pb-5 text-sm leading-6 text-charcoal max-sm:px-4">Não. A MR atua tanto em novos projetos quanto em ativos em operação, incluindo manutenção, retrofit, diagnóstico e substituições em campo.</p>
+                </details>
+
+                <details class="group rounded-2xl border border-hairline bg-cloud p-1 transition open:bg-white open:shadow-soft">
+                  <summary class="flex cursor-pointer list-none items-center gap-4 rounded-[12px] px-4 py-4">
+                    <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-hpblue shadow-soft group-open:bg-hpblue group-open:text-white">
+                      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M4.5 19V8.2L12 4l7.5 4.2V19" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                        <path d="M8 19v-6h8v6M9.5 9.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                      </svg>
+                    </span>
+                    <span class="flex-1 text-base font-medium text-ink">A equipe fica no Brasil?</span>
+                    <span class="relative h-7 w-7 shrink-0 rounded-full border border-steel bg-white">
+                      <span class="absolute left-1/2 top-1/2 h-px w-3 -translate-x-1/2 -translate-y-1/2 bg-ink"></span>
+                      <span class="absolute left-1/2 top-1/2 h-3 w-px -translate-x-1/2 -translate-y-1/2 bg-ink transition group-open:rotate-90 group-open:opacity-0"></span>
+                    </span>
+                  </summary>
+                  <p class="px-20 pb-5 text-sm leading-6 text-charcoal max-sm:px-4">Sim. A unidade brasileira fica em Embu das Artes, SP, e oferece suporte local com acesso ao conhecimento global do Grupo Reinhausen.</p>
+                </details>
+
+                <details class="group rounded-2xl border border-hairline bg-cloud p-1 transition open:bg-white open:shadow-soft">
+                  <summary class="flex cursor-pointer list-none items-center gap-4 rounded-[12px] px-4 py-4">
+                    <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-hpblue shadow-soft group-open:bg-hpblue group-open:text-white">
+                      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M7.5 10.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM16.5 10.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.7"/>
+                        <path d="M3.5 19c.6-3.1 2.2-5 4-5s3.4 1.9 4 5M12.5 19c.6-3.1 2.2-5 4-5s3.4 1.9 4 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                      </svg>
+                    </span>
+                    <span class="flex-1 text-base font-medium text-ink">Quais áreas costumam procurar a MR?</span>
+                    <span class="relative h-7 w-7 shrink-0 rounded-full border border-steel bg-white">
+                      <span class="absolute left-1/2 top-1/2 h-px w-3 -translate-x-1/2 -translate-y-1/2 bg-ink"></span>
+                      <span class="absolute left-1/2 top-1/2 h-3 w-px -translate-x-1/2 -translate-y-1/2 bg-ink transition group-open:rotate-90 group-open:opacity-0"></span>
+                    </span>
+                  </summary>
+                  <p class="px-20 pb-5 text-sm leading-6 text-charcoal max-sm:px-4">Engenharia, manutenção, operação, suprimentos técnicos, fabricantes de transformadores, concessionárias, indústrias eletrointensivas e integradores de projetos.</p>
+                </details>
+
+                <details class="group rounded-2xl border border-hairline bg-cloud p-1 transition open:bg-white open:shadow-soft">
+                  <summary class="flex cursor-pointer list-none items-center gap-4 rounded-[12px] px-4 py-4">
+                    <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-hpblue shadow-soft group-open:bg-hpblue group-open:text-white">
+                      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M7 4.5h7l3 3v12H7v-15Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                        <path d="M14 4.5v3h3M9.5 12h5M9.5 15.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                      </svg>
+                    </span>
+                    <span class="flex-1 text-base font-medium text-ink">O contato inicial precisa ter todos os dados técnicos?</span>
+                    <span class="relative h-7 w-7 shrink-0 rounded-full border border-steel bg-white">
+                      <span class="absolute left-1/2 top-1/2 h-px w-3 -translate-x-1/2 -translate-y-1/2 bg-ink"></span>
+                      <span class="absolute left-1/2 top-1/2 h-3 w-px -translate-x-1/2 -translate-y-1/2 bg-ink transition group-open:rotate-90 group-open:opacity-0"></span>
+                    </span>
+                  </summary>
+                  <p class="px-20 pb-5 text-sm leading-6 text-charcoal max-sm:px-4">Não. O formulário ajuda a iniciar a conversa; depois a equipe pode orientar quais informações do transformador, aplicação ou histórico de manutenção serão necessárias.</p>
+                </details>
+
+                <details class="group rounded-2xl border border-hairline bg-cloud p-1 transition open:bg-white open:shadow-soft">
+                  <summary class="flex cursor-pointer list-none items-center gap-4 rounded-[12px] px-4 py-4">
+                    <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-hpblue shadow-soft group-open:bg-hpblue group-open:text-white">
+                      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 8.2 12 4l7 4.2v7.6L12 20l-7-4.2V8.2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                        <path d="M8.5 10.5h7M8.5 13.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                      </svg>
+                    </span>
+                    <span class="flex-1 text-base font-medium text-ink">A MR também oferece treinamento?</span>
+                    <span class="relative h-7 w-7 shrink-0 rounded-full border border-steel bg-white">
+                      <span class="absolute left-1/2 top-1/2 h-px w-3 -translate-x-1/2 -translate-y-1/2 bg-ink"></span>
+                      <span class="absolute left-1/2 top-1/2 h-3 w-px -translate-x-1/2 -translate-y-1/2 bg-ink transition group-open:rotate-90 group-open:opacity-0"></span>
+                    </span>
+                  </summary>
+                  <p class="px-20 pb-5 text-sm leading-6 text-charcoal max-sm:px-4">Sim. Treinamento técnico é uma das frentes da unidade brasileira, ajudando equipes a operar e manter transformadores com mais segurança e previsibilidade.</p>
+                </details>
+
+                <details class="group rounded-2xl border border-hairline bg-cloud p-1 transition open:bg-white open:shadow-soft">
+                  <summary class="flex cursor-pointer list-none items-center gap-4 rounded-[12px] px-4 py-4">
+                    <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-hpblue shadow-soft group-open:bg-hpblue group-open:text-white">
+                      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 4.5v15M5.5 9.5h13M7.5 14.5h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                        <path d="M9.2 6.7 12 4.2l2.8 2.5M9.2 17.3l2.8 2.5 2.8-2.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <span class="flex-1 text-base font-medium text-ink">A MR pode apoiar a escolha da solução correta?</span>
+                    <span class="relative h-7 w-7 shrink-0 rounded-full border border-steel bg-white">
+                      <span class="absolute left-1/2 top-1/2 h-px w-3 -translate-x-1/2 -translate-y-1/2 bg-ink"></span>
+                      <span class="absolute left-1/2 top-1/2 h-3 w-px -translate-x-1/2 -translate-y-1/2 bg-ink transition group-open:rotate-90 group-open:opacity-0"></span>
+                    </span>
+                  </summary>
+                  <p class="px-20 pb-5 text-sm leading-6 text-charcoal max-sm:px-4">Sim. A equipe de vendas técnicas pode orientar a definição de escopo, solução, peças ou serviço de acordo com a condição e a criticidade do ativo.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solucoes" class="bg-cloud px-5 py-16 sm:px-8 lg:py-20">
+      <div class="mx-auto max-w-[1366px]">
+        <div class="reveal max-w-3xl">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-hpblue">Nossa linha de soluções</p>
+          <h2 class="mt-4 font-display text-[36px] font-medium leading-none tracking-[-0.02em] text-ink sm:text-[56px]">
+            Soluções para aumentar confiabilidade e reduzir risco operacional.
+          </h2>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+          <article class="reveal flex min-h-[310px] flex-col rounded-2xl bg-white p-6 shadow-soft">
+            <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-hpblueSoft text-hpblue">
+              <i class="fa-solid fa-bolt text-2xl" aria-hidden="true"></i>
+            </div>
+            <h3 class="mt-8 text-xl font-medium leading-none text-ink">VACUTAP®</h3>
+            <p class="mt-4 text-sm leading-6 text-charcoal">Comutadores a vácuo para alta confiabilidade, menor manutenção e desempenho consistente.</p>
+            <a href="#contato" class="mt-auto pt-6 text-sm font-medium text-hpblue">Solicitar detalhes</a>
+          </article>
+
+          <article class="reveal flex min-h-[310px] flex-col rounded-2xl bg-white p-6 shadow-soft">
+            <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-hpblueSoft text-hpblue">
+              <i class="fa-solid fa-microchip text-2xl" aria-hidden="true"></i>
+            </div>
+            <h3 class="mt-8 text-xl font-medium leading-none text-ink">TAPCON® & ETOS®</h3>
+            <p class="mt-4 text-sm leading-6 text-charcoal">Monitoramento e controle inteligente para dados acionáveis, previsibilidade e digitalização.</p>
+            <a href="#contato" class="mt-auto pt-6 text-sm font-medium text-hpblue">Solicitar detalhes</a>
+          </article>
+
+          <article class="reveal flex min-h-[310px] flex-col rounded-2xl bg-white p-6 shadow-soft">
+            <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-hpblueSoft text-hpblue">
+              <i class="fa-solid fa-tower-broadcast text-2xl" aria-hidden="true"></i>
+            </div>
+            <h3 class="mt-8 text-xl font-medium leading-none text-ink">Bushings (buchas)</h3>
+            <p class="mt-4 text-sm leading-6 text-charcoal">Soluções em porcelana e silicone para aplicações exigentes de segurança e desempenho elétrico.</p>
+            <a href="#contato" class="mt-auto pt-6 text-sm font-medium text-hpblue">Solicitar detalhes</a>
+          </article>
+
+          <article class="reveal flex min-h-[310px] flex-col rounded-2xl bg-white p-6 shadow-soft">
+            <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-hpblueSoft text-hpblue">
+              <i class="fa-solid fa-screwdriver-wrench text-2xl" aria-hidden="true"></i>
+            </div>
+            <h3 class="mt-8 text-xl font-medium leading-none text-ink">Retrofit</h3>
+            <p class="mt-4 text-sm leading-6 text-charcoal">Modernização para ampliar vida útil, reduzir obsolescência e elevar disponibilidade do ativo.</p>
+            <a href="#contato" class="mt-auto pt-6 text-sm font-medium text-hpblue">Solicitar detalhes</a>
+          </article>
+
+          <article class="reveal flex min-h-[310px] flex-col rounded-2xl bg-white p-6 shadow-soft md:col-span-2 xl:col-span-1">
+            <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-hpblueSoft text-hpblue">
+              <i class="fa-solid fa-helmet-safety text-2xl" aria-hidden="true"></i>
+            </div>
+            <h3 class="mt-8 text-xl font-medium leading-none text-ink">Serviços Técnicos</h3>
+            <p class="mt-4 text-sm leading-6 text-charcoal">Manutenção, comissionamento, treinamento e diagnóstico com equipe especializada.</p>
+            <a href="#contato" class="mt-auto pt-6 text-sm font-medium text-hpblue">Solicitar detalhes</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferenciais" class="bg-white px-5 py-16 sm:px-8 lg:py-20">
+      <div class="mx-auto grid max-w-[1366px] gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <div class="reveal rounded-2xl bg-cloud p-4">
+          <img src="mr-oltc-assembly.webp" alt="Equipe técnica da Reinhausen em área de montagem de comutadores OLTC" class="aspect-[4/3] w-full rounded-2xl object-cover">
+        </div>
+
+        <div class="reveal">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-hpblue">Por que escolher a MR do Brasil</p>
+          <h2 class="mt-4 font-display text-[36px] font-medium leading-none tracking-[-0.02em] text-ink sm:text-[56px]">
+            Engenharia global com resposta local para ativos que não podem parar.
+          </h2>
+          <p class="mt-6 max-w-2xl text-lg leading-[1.4] text-charcoal">
+            A MR do Brasil combina tecnologia alemã, experiência de campo e suporte próximo para concessionárias, indústrias, EPCs e fabricantes de transformadores.
+          </p>
+
+          <div class="mt-10 divide-y divide-hairline border-y border-hairline">
+            <div class="grid gap-4 py-6 sm:grid-cols-[180px_1fr]">
+              <p class="text-base font-medium text-ink">Suporte local</p>
+              <p class="text-base leading-7 text-charcoal">Atendimento técnico em Embu das Artes, SP, com conhecimento do ambiente elétrico brasileiro.</p>
+            </div>
+            <div class="grid gap-4 py-6 sm:grid-cols-[180px_1fr]">
+              <p class="text-base font-medium text-ink">40+ anos no Brasil</p>
+              <p class="text-base leading-7 text-charcoal">Histórico em operações críticas de transmissão, distribuição, geração e grandes plantas industriais.</p>
+            </div>
+            <div class="grid gap-4 py-6 sm:grid-cols-[180px_1fr]">
+              <p class="text-base font-medium text-ink">Menos tempo de parada</p>
+              <p class="text-base leading-7 text-charcoal">Retrofit, monitoramento e manutenção orientados à disponibilidade, à previsibilidade e à redução do custo total.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="bg-ink px-5 py-16 text-white sm:px-8 lg:py-20">
+      <div class="mx-auto grid max-w-[1366px] gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div class="reveal">
+          <div class="mb-8 flex gap-3">
+            <span class="slash h-20 w-5 bg-hpblueBright"></span>
+            <span class="slash h-20 w-5 bg-hpblue"></span>
+          </div>
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-hpblueBright">Solicite uma proposta técnica</p>
+          <h2 class="mt-4 font-display text-[36px] font-medium leading-none tracking-[-0.02em] text-white sm:text-[56px]">
+            Conte-nos sobre o seu projeto ou ativo em operação.
+          </h2>
+          <p class="mt-6 max-w-xl text-lg leading-[1.4] text-white/78">
+            Nossa equipe retorna com orientação para OLTC, controle, monitoramento, buchas, retrofit ou serviços técnicos especializados.
+          </p>
+        </div>
+
+        <form id="leadForm" class="reveal rounded-2xl bg-white p-6 text-ink shadow-modal sm:p-8" action="#" method="post">
+          <div class="grid gap-5 sm:grid-cols-2">
+            <label class="block">
+              <span class="text-sm font-semibold text-ink">Nome completo*</span>
+              <input required type="text" name="nome" autocomplete="name" class="mt-2 h-11 w-full rounded-[4px] border border-steel bg-white px-4 text-base text-ink outline-none focus:border-ink" placeholder="Seu nome">
+            </label>
+
+            <label class="block">
+              <span class="text-sm font-semibold text-ink">Empresa*</span>
+              <input required type="text" name="empresa" autocomplete="organization" class="mt-2 h-11 w-full rounded-[4px] border border-steel bg-white px-4 text-base text-ink outline-none focus:border-ink" placeholder="Nome da empresa">
+            </label>
+
+            <label class="block">
+              <span class="text-sm font-semibold text-ink">Cargo</span>
+              <input type="text" name="cargo" autocomplete="organization-title" class="mt-2 h-11 w-full rounded-[4px] border border-steel bg-white px-4 text-base text-ink outline-none focus:border-ink" placeholder="Engenharia, manutenção...">
+            </label>
+
+            <label class="block">
+              <span class="text-sm font-semibold text-ink">E-mail*</span>
+              <input required type="email" name="email" autocomplete="email" class="mt-2 h-11 w-full rounded-[4px] border border-steel bg-white px-4 text-base text-ink outline-none focus:border-ink" placeholder="seu.nome@empresa.com.br">
+            </label>
+
+            <label class="block sm:col-span-2">
+              <span class="text-sm font-semibold text-ink">Telefone/WhatsApp*</span>
+              <input required type="tel" name="telefone" autocomplete="tel" class="mt-2 h-11 w-full rounded-[4px] border border-steel bg-white px-4 text-base text-ink outline-none focus:border-ink" placeholder="(00) 00000-0000">
+            </label>
+
+            <label class="block sm:col-span-2">
+              <span class="text-sm font-semibold text-ink">Qual solução você está buscando?</span>
+              <select name="solucao" class="mt-2 h-11 w-full rounded-[4px] border border-steel bg-white px-4 text-base text-ink outline-none focus:border-ink">
+                <option>VACUTAP® - Comutadores a vácuo</option>
+                <option>TAPCON® & ETOS® - Monitoramento e controle inteligente</option>
+                <option>Bushings (buchas) - Porcelana e silicone</option>
+                <option>Retrofit e Modernização</option>
+                <option>Serviços Técnicos</option>
+                <option>Outra</option>
+              </select>
+            </label>
+          </div>
+
+          <button type="submit" class="mt-7 inline-flex h-11 w-full items-center justify-center rounded-[4px] bg-hpblue px-6 text-sm font-semibold uppercase tracking-[0.07em] text-white transition hover:bg-hpblueDeep">
+            Solicitar proposta técnica
+          </button>
+
+          <p class="mt-4 text-center text-xs leading-5 text-graphite">
+            Campos com * são obrigatórios. Substitua o <code>action</code> pelo endpoint do seu CRM ou plataforma de automação.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <section id="confianca" class="bg-fog px-5 py-16 sm:px-8 lg:py-20">
+      <div class="mx-auto max-w-[1366px]">
+        <div class="reveal grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[0.18em] text-hpblue">Confiança operacional</p>
+            <h2 class="mt-4 font-display text-[36px] font-medium leading-none tracking-[-0.02em] text-ink sm:text-[56px]">
+              Critérios técnicos para uma decisão segura.
+            </h2>
+          </div>
+          <p class="text-lg leading-[1.4] text-charcoal">
+            Para transformadores críticos, a escolha do parceiro precisa reduzir incerteza: disponibilidade de suporte, conhecimento aplicado, rastreabilidade e padrões globais de qualidade.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div class="reveal rounded-2xl bg-white p-6 shadow-soft">
+            <p class="text-[32px] font-medium leading-none text-ink">40+</p>
+            <p class="mt-4 text-base font-medium text-ink">anos no Brasil</p>
+            <p class="mt-2 text-sm leading-6 text-charcoal">Presença local para suporte técnico e relacionamento próximo.</p>
+          </div>
+          <div class="reveal rounded-2xl bg-white p-6 shadow-soft">
+            <p class="text-[32px] font-medium leading-none text-ink">Global</p>
+            <p class="mt-4 text-base font-medium text-ink">Referência em OLTC</p>
+            <p class="mt-2 text-sm leading-6 text-charcoal">Conhecimento técnico alemão aplicado a redes e ativos críticos.</p>
+          </div>
+          <div class="reveal rounded-2xl bg-white p-6 shadow-soft">
+            <p class="text-[32px] font-medium leading-none text-ink">Local</p>
+            <p class="mt-4 text-base font-medium text-ink">Embu das Artes, SP</p>
+            <p class="mt-2 text-sm leading-6 text-charcoal">Equipe para operação, manutenção e modernização.</p>
+          </div>
+          <div class="reveal rounded-2xl bg-white p-6 shadow-soft">
+            <p class="text-[32px] font-medium leading-none text-ink">ISO</p>
+            <p class="mt-4 text-base font-medium text-ink">Qualidade e processos</p>
+            <p class="mt-2 text-sm leading-6 text-charcoal">Espaço reservado para certificações, casos de sucesso e depoimentos autorizados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white px-5 py-10 sm:px-8">
+      <div class="mx-auto max-w-[1366px] overflow-hidden rounded-2xl bg-ink text-white">
+        <div class="grid lg:grid-cols-[1.05fr_0.95fr]">
+          <div class="reveal p-8 sm:p-12 lg:p-16">
+            <p class="text-sm font-bold uppercase tracking-[0.18em] text-hpblueBright">Próximo passo</p>
+            <h2 class="mt-4 max-w-2xl font-display text-[36px] font-medium leading-none tracking-[-0.02em] text-white sm:text-[56px]">
+              Leve tecnologia MR para o seu próximo projeto.
+            </h2>
+            <p class="mt-6 max-w-xl text-lg leading-[1.4] text-white/78">
+              Solicite uma avaliação técnica e receba orientação para reduzir risco, custo e indisponibilidade.
+            </p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="#contato" class="inline-flex h-11 items-center justify-center rounded-[4px] bg-hpblueBright px-6 text-sm font-semibold uppercase tracking-[0.07em] text-white transition hover:bg-hpblue">
+                Solicitar proposta
+              </a>
+              <a href="https://wa.me/5511976553275?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20MR%20do%20Brasil." target="_blank" rel="noopener" class="inline-flex h-11 items-center justify-center rounded-[4px] border border-white bg-ink px-6 text-sm font-semibold uppercase tracking-[0.07em] text-white transition hover:bg-white hover:text-ink">
+                Falar no WhatsApp
+              </a>
+            </div>
+          </div>
+          <div class="min-h-[320px] bg-[url('mr-haslbach-final.webp')] bg-cover bg-center opacity-90"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="videoModal" class="video-modal fixed inset-0 z-[80] hidden items-center justify-center bg-ink/92 p-4 backdrop-blur" role="dialog" aria-modal="true" aria-label="Vídeo institucional da MR">
+    <div class="relative w-full max-w-6xl overflow-hidden rounded-2xl bg-ink shadow-modal">
+      <div class="flex items-center justify-between border-b border-white/10 px-5 py-4 text-white">
+        <p class="text-sm font-semibold uppercase tracking-[0.16em]">Vídeo institucional da MR</p>
+        <button type="button" id="closeVideoModal" class="inline-flex h-10 w-10 items-center justify-center rounded-[4px] border border-white/20 bg-white/10 text-white transition hover:bg-white hover:text-hpblue" aria-label="Fechar vídeo">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="aspect-video bg-black">
+        <iframe id="fullVideoFrame" class="h-full w-full" src="" title="Vídeo institucional da MR" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-ink px-5 py-14 text-white sm:px-8">
+    <div class="mx-auto grid max-w-[1366px] gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
+      <div>
+        <div class="flex items-center gap-3">
+          <img src="mr_logo_rgb_darkblue.svg" alt="" class="h-10 w-10 rounded bg-white p-1" aria-hidden="true">
+          <span class="text-lg font-semibold">MR do Brasil</span>
+        </div>
+        <p class="mt-5 max-w-md text-sm leading-6 text-white/70">
+          Subsidiária brasileira da Maschinenfabrik Reinhausen, com soluções para transformadores de potência e redes elétricas críticas.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-base font-medium">Soluções</h3>
+        <div class="mt-4 space-y-3 text-sm text-white/70">
+          <p>VACUTAP®</p>
+          <p>TAPCON® & ETOS®</p>
+          <p>Bushings</p>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-base font-medium">Serviços</h3>
+        <div class="mt-4 space-y-3 text-sm text-white/70">
+          <p>Retrofit</p>
+          <p>Manutenção</p>
+          <p>Comissionamento</p>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-base font-medium">Contato</h3>
+        <div class="mt-4 space-y-3 text-sm text-white/70">
+          <a href="#contato" class="block hover:text-white">Solicitar proposta</a>
+          <a href="https://wa.me/5511976553275" target="_blank" rel="noopener" class="block hover:text-white">WhatsApp</a>
+          <p>Embu das Artes, SP</p>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto mt-12 max-w-[1366px] border-t border-white/15 pt-6 text-xs leading-5 text-white/55">
+      © 2026 MR do Brasil. Landing page para campanhas B2B. Imagens ilustrativas; substitua por fotos oficiais quando disponíveis.
+    </div>
+  </footer>
+
+  <script>
+    const whatsappNumber = '5511976553275';
+
+    const pageI18n = {
+      meta: {
+        pt: {
+          title: 'MR do Brasil | Soluções para Transformadores',
+          description: 'MR do Brasil: tecnologia alemã e suporte local para OLTC, monitoramento, buchas, retrofit e serviços técnicos para transformadores.',
+          whatsapp: 'Olá, quero falar com a MR do Brasil sobre soluções para transformadores.'
+        },
+        en: {
+          title: 'MR do Brasil | Transformer Solutions',
+          description: 'MR do Brasil: German technology and local support for OLTC, monitoring, bushings, retrofit and technical services for transformers.',
+          whatsapp: 'Hello, I would like to talk to MR do Brasil about transformer solutions.'
+        },
+        es: {
+          title: 'MR do Brasil | Soluciones para Transformadores',
+          description: 'MR do Brasil: tecnología alemana y soporte local para OLTC, monitoreo, bushings, retrofit y servicios técnicos para transformadores.',
+          whatsapp: 'Hola, quiero hablar con MR do Brasil sobre soluciones para transformadores.'
+        }
+      },
+      formMessage: {
+        pt: {
+          title: 'Olá, gostaria de solicitar uma proposta técnica da MR do Brasil.',
+          name: 'Nome completo',
+          company: 'Empresa',
+          role: 'Cargo',
+          email: 'E-mail',
+          phone: 'Telefone/WhatsApp',
+          solution: 'Solução buscada',
+          footer: 'Aguardo o contato da equipe técnica-comercial.'
+        },
+        en: {
+          title: 'Hello, I would like to request a technical proposal from MR do Brasil.',
+          name: 'Full name',
+          company: 'Company',
+          role: 'Job title',
+          email: 'Email',
+          phone: 'Phone/WhatsApp',
+          solution: 'Requested solution',
+          footer: 'I look forward to hearing from the technical and commercial team.'
+        },
+        es: {
+          title: 'Hola, me gustaría solicitar una propuesta técnica de MR do Brasil.',
+          name: 'Nombre completo',
+          company: 'Empresa',
+          role: 'Cargo',
+          email: 'Correo electrónico',
+          phone: 'Teléfono/WhatsApp',
+          solution: 'Solución buscada',
+          footer: 'Quedo a la espera del contacto del equipo técnico-comercial.'
+        }
+      },
+      text: {
+        'Pular para o conteúdo': { en: 'Skip to content', es: 'Saltar al contenido' },
+        'Maschinenfabrik Reinhausen no Brasil': { en: 'Maschinenfabrik Reinhausen in Brazil', es: 'Maschinenfabrik Reinhausen en Brasil' },
+        'Atendimento técnico-comercial': { en: 'Technical and commercial support', es: 'Atención técnico-comercial' },
+        'Sobre a MR': { en: 'About MR', es: 'Sobre MR' },
+        'Soluções': { en: 'Solutions', es: 'Soluciones' },
+        'Diferenciais': { en: 'Advantages', es: 'Diferenciales' },
+        'Confiança': { en: 'Trust', es: 'Confianza' },
+        'Contato': { en: 'Contact', es: 'Contacto' },
+        'Orçamento': { en: 'Quote', es: 'Cotización' },
+        'Solicitar orçamento': { en: 'Request a quote', es: 'Solicitar cotización' },
+        'Assistir em tela cheia': { en: 'Watch fullscreen', es: 'Ver en pantalla completa' },
+        'Vídeo institucional da MR': { en: 'MR corporate video', es: 'Video institucional de MR' },
+        'Comutação resistiva a vácuo para transformadores': { en: 'Vacuum resistive switching for transformers', es: 'Conmutación resistiva al vacío para transformadores' },
+        'MR do Brasil': { en: 'MR do Brasil', es: 'MR do Brasil' },
+        'Tecnologia Alemã. Suporte Local. Confiança na sua Rede Elétrica.': { en: 'German Technology. Local Support. Trust for Your Electrical Grid.', es: 'Tecnología Alemana. Soporte Local. Confianza para su Red Eléctrica.' },
+        'Soluções para comutadores de derivação sob carga (OLTC), monitoramento, buchas, retrofit e serviços técnicos com o conhecimento global da Reinhausen e atendimento local em Embu das Artes, SP.': { en: 'Solutions for on-load tap changers (OLTC), monitoring, bushings, retrofit and technical services with Reinhausen global expertise and local support in Embu das Artes, São Paulo.', es: 'Soluciones para cambiadores de tomas bajo carga (OLTC), monitoreo, bushings, retrofit y servicios técnicos con el conocimiento global de Reinhausen y soporte local en Embu das Artes, São Paulo.' },
+        'Falar no WhatsApp': { en: 'Talk on WhatsApp', es: 'Hablar por WhatsApp' },
+        'Suporte local em SP': { en: 'Local support in São Paulo', es: 'Soporte local en São Paulo' },
+        'Base técnica da MR do Brasil em Embu das Artes para serviços técnicos em comutadores e transformadores.': { en: 'MR do Brasil technical base in Embu das Artes for technical services on tap changers and transformers.', es: 'Base técnica de MR do Brasil en Embu das Artes para servicios técnicos en cambiadores y transformadores.' },
+        '40+ anos': { en: '40+ years', es: 'Más de 40 años' },
+        'Presença local no Brasil': { en: 'Local presence in Brazil', es: 'Presencia local en Brasil' },
+        'Liderança mundial em comutação': { en: 'Global leadership in tap changing', es: 'Liderazgo mundial en conmutación' },
+        'Suporte técnico em Embu das Artes': { en: 'Technical support in Embu das Artes', es: 'Soporte técnico en Embu das Artes' },
+        'Conheça a MR do Brasil': { en: 'Get to know MR do Brasil', es: 'Conozca MR do Brasil' },
+        'A especialista por trás da confiabilidade dos transformadores.': { en: 'The specialist behind transformer reliability.', es: 'La especialista detrás de la confiabilidad de los transformadores.' },
+        'Fundada em 1980, a MR do Brasil foi a primeira subsidiária do Grupo Reinhausen. A unidade em Embu das Artes, na região metropolitana de São Paulo, atua como centro de competência regional para vendas técnicas, serviços, treinamento e suporte a transformadores.': { en: 'Founded in 1980, MR do Brasil was the first subsidiary of the Reinhausen Group. The unit in Embu das Artes, in the São Paulo metropolitan area, acts as a regional competence center for technical sales, services, training and transformer support.', es: 'Fundada en 1980, MR do Brasil fue la primera subsidiaria del Grupo Reinhausen. La unidad en Embu das Artes, en la región metropolitana de São Paulo, actúa como centro regional de competencia para ventas técnicas, servicios, capacitación y soporte a transformadores.' },
+        'Fundada em julho de 1980, a Reinhausen do Brasil foi a primeira subsidiária da Maschinenfabrik Reinhausen. Em Embu das Artes, na Região Metropolitana de São Paulo, a unidade atua como centro de competência regional para vendas técnicas, serviços técnicos, treinamento e suporte a transformadores.': { en: 'Founded in July 1980, Reinhausen do Brasil was the first subsidiary of Maschinenfabrik Reinhausen. In Embu das Artes, in the São Paulo Metropolitan Region, the unit acts as a regional competence center for technical sales, technical services, training and transformer support.', es: 'Fundada en julio de 1980, Reinhausen do Brasil fue la primera subsidiaria de Maschinenfabrik Reinhausen. En Embu das Artes, en la Región Metropolitana de São Paulo, la unidad actúa como centro regional de competencia para ventas técnicas, servicios técnicos, capacitación y soporte a transformadores.' },
+        'Com mais de 80 profissionais no site, a equipe local apoia as marcas do Grupo Reinhausen e ajuda clientes a manter transformadores operando com desempenho, segurança e disponibilidade.': { en: 'With more than 80 professionals on site, the local team supports Reinhausen Group brands and helps customers keep transformers operating with performance, safety and availability.', es: 'Con más de 80 profesionales en el sitio, el equipo local apoya las marcas del Grupo Reinhausen y ayuda a los clientes a mantener transformadores operando con desempeño, seguridad y disponibilidad.' },
+        'Base técnica em Embu das Artes para atendimento em comutadores, transformadores e serviços de campo.': { en: 'Technical base in Embu das Artes for support on tap changers, transformers and field services.', es: 'Base técnica en Embu das Artes para atención en cambiadores, transformadores y servicios de campo.' },
+        'O que a MR do Brasil faz?': { en: 'What does MR do Brasil do?', es: '¿Qué hace MR do Brasil?' },
+        'A MR apoia empresas que operam, fabricam, modernizam ou mantêm transformadores de potência. Na prática, isso inclui comutadores de derivação sob carga (OLTC), sistemas de controle e monitoramento, acessórios, buchas, diagnóstico, retrofit, comissionamento, manutenção e treinamento técnico.': { en: 'MR supports companies that operate, manufacture, modernize or maintain power transformers. In practice, this includes on-load tap changers (OLTC), control and monitoring systems, accessories, bushings, diagnostics, retrofit, commissioning, maintenance and technical training.', es: 'MR apoya a empresas que operan, fabrican, modernizan o mantienen transformadores de potencia. En la práctica, esto incluye cambiadores de tomas bajo carga (OLTC), sistemas de control y monitoreo, accesorios, bushings, diagnóstico, retrofit, puesta en servicio, mantenimiento y capacitación técnica.' },
+        'A MR apoia empresas que operam, fabricam, modernizam ou mantêm transformadores de potência. Na prática, isso inclui comutadores de derivação sob carga (OLTC), sistemas de controle e monitoramento, acessórios, buchas, diagnóstico, retrofit, comissionamento, manutenção, treinamento técnico e suporte às marcas Reinhausen na região.': { en: 'MR supports companies that operate, manufacture, modernize or maintain power transformers. In practice, this includes on-load tap changers (OLTC), control and monitoring systems, accessories, bushings, diagnostics, retrofit, commissioning, maintenance, technical training and support for Reinhausen brands in the region.', es: 'MR apoya a empresas que operan, fabrican, modernizan o mantienen transformadores de potencia. En la práctica, esto incluye cambiadores de tomas bajo carga (OLTC), sistemas de control y monitoreo, accesorios, bushings, diagnóstico, retrofit, puesta en servicio, mantenimiento, capacitación técnica y soporte a las marcas Reinhausen en la región.' },
+        'Para operação e manutenção': { en: 'For operation and maintenance', es: 'Para operación y mantenimiento' },
+        'Redução de paradas, diagnóstico de condição, suporte de campo e planejamento de manutenção.': { en: 'Reduced downtime, condition diagnostics, field support and maintenance planning.', es: 'Reducción de paradas, diagnóstico de condición, soporte en campo y planificación de mantenimiento.' },
+        'Para engenharia e projetos': { en: 'For engineering and projects', es: 'Para ingeniería y proyectos' },
+        'Especificação técnica, retrofit, modernização, acessórios e suporte para novas aplicações.': { en: 'Technical specification, retrofit, modernization, accessories and support for new applications.', es: 'Especificación técnica, retrofit, modernización, accesorios y soporte para nuevas aplicaciones.' },
+        'Para equipes técnicas': { en: 'For technical teams', es: 'Para equipos técnicos' },
+        'Treinamento, capacitação e transferência de conhecimento para operação mais segura dos ativos.': { en: 'Training, qualification and knowledge transfer for safer asset operation.', es: 'Entrenamiento, capacitación y transferencia de conocimiento para una operación más segura de los activos.' },
+        'Para compras e suprimentos': { en: 'For procurement and supply teams', es: 'Para compras y abastecimiento' },
+        'Apoio técnico para selecionar soluções, peças, serviços e escopos compatíveis com a necessidade do ativo.': { en: 'Technical support to select solutions, parts, services and scopes compatible with the asset need.', es: 'Apoyo técnico para seleccionar soluciones, piezas, servicios y alcances compatibles con la necesidad del activo.' },
+        'Primeira subsidiária': { en: 'First subsidiary', es: 'Primera subsidiaria' },
+        'A MR do Brasil nasceu como a primeira subsidiária da Maschinenfabrik Reinhausen.': { en: 'MR do Brasil was established as the first subsidiary of Maschinenfabrik Reinhausen.', es: 'MR do Brasil nació como la primera subsidiaria de Maschinenfabrik Reinhausen.' },
+        'A operação brasileira nasceu em julho de 1980 como a primeira subsidiária da Maschinenfabrik Reinhausen.': { en: 'The Brazilian operation was established in July 1980 as the first subsidiary of Maschinenfabrik Reinhausen.', es: 'La operación brasileña nació en julio de 1980 como la primera subsidiaria de Maschinenfabrik Reinhausen.' },
+        'Profissionais': { en: 'Professionals', es: 'Profesionales' },
+        'Equipe local dedicada a vendas técnicas, serviços, treinamento e suporte regional.': { en: 'Local team dedicated to technical sales, services, training and regional support.', es: 'Equipo local dedicado a ventas técnicas, servicios, capacitación y soporte regional.' },
+        'Equipe local dedicada a vendas técnicas, serviços técnicos, treinamento e suporte regional.': { en: 'Local team dedicated to technical sales, technical services, training and regional support.', es: 'Equipo local dedicado a ventas técnicas, servicios técnicos, capacitación y soporte regional.' },
+        'Embu das Artes': { en: 'Embu das Artes', es: 'Embu das Artes' },
+        'Base próxima aos principais polos industriais e de infraestrutura do país.': { en: 'A base close to the country main industrial and infrastructure hubs.', es: 'Base cercana a los principales polos industriales y de infraestructura del país.' },
+        'Centro de competência regional': { en: 'Regional competence center', es: 'Centro regional de competencia' },
+        'A unidade brasileira reúne conhecimento técnico, estrutura de atendimento e experiência de campo para apoiar clientes da região em todo o ciclo de vida do transformador: especificação, operação, manutenção, modernização e treinamento.': { en: 'The Brazilian unit brings together technical knowledge, support structure and field experience to assist customers in the region throughout the transformer life cycle: specification, operation, maintenance, modernization and training.', es: 'La unidad brasileña reúne conocimiento técnico, estructura de atención y experiencia de campo para apoyar a clientes de la región durante todo el ciclo de vida del transformador: especificación, operación, mantenimiento, modernización y capacitación.' },
+        'Vendas técnicas': { en: 'Technical sales', es: 'Ventas técnicas' },
+        'Apoio para transformar necessidade operacional em escopo técnico adequado.': { en: 'Support to translate operational needs into the right technical scope.', es: 'Apoyo para transformar la necesidad operativa en un alcance técnico adecuado.' },
+        'Serviço técnico': { en: 'Technical service', es: 'Servicio técnico' },
+        'Atendimento especializado para comutadores, transformadores e sistemas associados.': { en: 'Specialized support for tap changers, transformers and associated systems.', es: 'Atención especializada para cambiadores, transformadores y sistemas asociados.' },
+        'Treinamento': { en: 'Training', es: 'Capacitación' },
+        'Capacitação para equipes que operam e mantêm ativos críticos.': { en: 'Training for teams that operate and maintain critical assets.', es: 'Capacitación para equipos que operan y mantienen activos críticos.' },
+        'Quando faz sentido chamar a MR?': { en: 'When should you call MR?', es: '¿Cuándo conviene llamar a MR?' },
+        'Falhas recorrentes no OLTC:': { en: 'Recurring OLTC failures:', es: 'Fallas recurrentes en el OLTC:' },
+        'avaliação técnica, manutenção, peças, diagnóstico e modernização.': { en: 'technical assessment, maintenance, parts, diagnostics and modernization.', es: 'evaluación técnica, mantenimiento, piezas, diagnóstico y modernización.' },
+        'Ativos envelhecidos:': { en: 'Aging assets:', es: 'Activos envejecidos:' },
+        'retrofit para ampliar vida útil e reduzir risco de indisponibilidade.': { en: 'retrofit to extend service life and reduce the risk of unavailability.', es: 'retrofit para ampliar la vida útil y reducir el riesgo de indisponibilidad.' },
+        'Projetos novos:': { en: 'New projects:', es: 'Proyectos nuevos:' },
+        'apoio na especificação de comutadores, buchas, acessórios, controle e monitoramento.': { en: 'support in specifying tap changers, bushings, accessories, control and monitoring.', es: 'apoyo en la especificación de cambiadores, bushings, accesorios, control y monitoreo.' },
+        'Equipe em campo:': { en: 'Field team:', es: 'Equipo en campo:' },
+        'comissionamento, treinamento, suporte técnico e diagnóstico especializado.': { en: 'commissioning, training, technical support and specialized diagnostics.', es: 'puesta en servicio, capacitación, soporte técnico y diagnóstico especializado.' },
+        'Suporte regional:': { en: 'Regional support:', es: 'Soporte regional:' },
+        'atendimento para clientes que precisam de orientação técnica sobre marcas e soluções Reinhausen.': { en: 'support for customers who need technical guidance on Reinhausen brands and solutions.', es: 'atención para clientes que necesitan orientación técnica sobre marcas y soluciones Reinhausen.' },
+        'Dúvidas de especificação:': { en: 'Specification questions:', es: 'Dudas de especificación:' },
+        'análise inicial para entender aplicação, tensão, criticidade, histórico e necessidade de modernização.': { en: 'initial analysis to understand application, voltage, criticality, history and modernization needs.', es: 'análisis inicial para entender aplicación, tensión, criticidad, historial y necesidad de modernización.' },
+        'Dúvidas comuns de quem ainda não conhece a MR': { en: 'Common questions from those who do not know MR yet', es: 'Preguntas comunes de quienes aún no conocen MR' },
+        'A MR atende apenas transformadores novos?': { en: 'Does MR only support new transformers?', es: '¿MR atiende solo transformadores nuevos?' },
+        'Não. A MR atua tanto em novos projetos quanto em ativos em operação, incluindo manutenção, retrofit, diagnóstico e substituições em campo.': { en: 'No. MR works on both new projects and assets already in operation, including maintenance, retrofit, diagnostics and field replacements.', es: 'No. MR actúa tanto en proyectos nuevos como en activos en operación, incluyendo mantenimiento, retrofit, diagnóstico y sustituciones en campo.' },
+        'A equipe fica no Brasil?': { en: 'Is the team based in Brazil?', es: '¿El equipo está en Brasil?' },
+        'Sim. A unidade brasileira fica em Embu das Artes, SP, e oferece suporte local com acesso ao conhecimento global do Grupo Reinhausen.': { en: 'Yes. The Brazilian unit is located in Embu das Artes, São Paulo, and provides local support with access to the Reinhausen Group global expertise.', es: 'Sí. La unidad brasileña está ubicada en Embu das Artes, São Paulo, y ofrece soporte local con acceso al conocimiento global del Grupo Reinhausen.' },
+        'Quais áreas costumam procurar a MR?': { en: 'Which teams usually contact MR?', es: '¿Qué áreas suelen contactar a MR?' },
+        'Engenharia, manutenção, operação, suprimentos técnicos, fabricantes de transformadores, concessionárias, indústrias eletrointensivas e integradores de projetos.': { en: 'Engineering, maintenance, operations, technical procurement, transformer manufacturers, utilities, energy-intensive industries and project integrators.', es: 'Ingeniería, mantenimiento, operación, compras técnicas, fabricantes de transformadores, utilities, industrias electrointensivas e integradores de proyectos.' },
+        'O contato inicial precisa ter todos os dados técnicos?': { en: 'Does the first contact need all technical data?', es: '¿El contacto inicial necesita todos los datos técnicos?' },
+        'Não. O formulário ajuda a iniciar a conversa; depois a equipe pode orientar quais informações do transformador, aplicação ou histórico de manutenção serão necessárias.': { en: 'No. The form helps start the conversation; then the team can advise which transformer, application or maintenance history information will be needed.', es: 'No. El formulario ayuda a iniciar la conversación; luego el equipo puede orientar qué información del transformador, la aplicación o el historial de mantenimiento será necesaria.' },
+        'A MR também oferece treinamento?': { en: 'Does MR also offer training?', es: '¿MR también ofrece capacitación?' },
+        'Sim. Treinamento técnico é uma das frentes da unidade brasileira, ajudando equipes a operar e manter transformadores com mais segurança e previsibilidade.': { en: 'Yes. Technical training is one of the Brazilian unit service areas, helping teams operate and maintain transformers with greater safety and predictability.', es: 'Sí. La capacitación técnica es una de las áreas de la unidad brasileña, ayudando a los equipos a operar y mantener transformadores con más seguridad y previsibilidad.' },
+        'A MR pode apoiar a escolha da solução correta?': { en: 'Can MR help choose the right solution?', es: '¿MR puede apoyar la elección de la solución correcta?' },
+        'Sim. A equipe de vendas técnicas pode orientar a definição de escopo, solução, peças ou serviço de acordo com a condição e a criticidade do ativo.': { en: 'Yes. The technical sales team can guide the definition of scope, solution, parts or service according to the asset condition and criticality.', es: 'Sí. El equipo de ventas técnicas puede orientar la definición de alcance, solución, piezas o servicio de acuerdo con la condición y criticidad del activo.' },
+        'Nossa linha de soluções': { en: 'Our solution portfolio', es: 'Nuestra línea de soluciones' },
+        'Soluções para aumentar confiabilidade e reduzir risco operacional.': { en: 'Solutions to increase reliability and reduce operational risk.', es: 'Soluciones para aumentar la confiabilidad y reducir el riesgo operativo.' },
+        'Comutadores a vácuo para alta confiabilidade, menor manutenção e desempenho consistente.': { en: 'Vacuum tap changers for high reliability, lower maintenance and consistent performance.', es: 'Cambiadores al vacío para alta confiabilidad, menor mantenimiento y desempeño consistente.' },
+        'Solicitar detalhes': { en: 'Request details', es: 'Solicitar detalles' },
+        'Monitoramento e controle inteligente para dados acionáveis, previsibilidade e digitalização.': { en: 'Intelligent monitoring and control for actionable data, predictability and digitalization.', es: 'Monitoreo y control inteligente para datos accionables, previsibilidad y digitalización.' },
+        'Bushings (buchas)': { en: 'Bushings', es: 'Bushings' },
+        'Soluções em porcelana e silicone para aplicações exigentes de segurança e desempenho elétrico.': { en: 'Porcelain and silicone solutions for demanding safety and electrical performance applications.', es: 'Soluciones en porcelana y silicona para aplicaciones exigentes de seguridad y desempeño eléctrico.' },
+        'Modernização para ampliar vida útil, reduzir obsolescência e elevar disponibilidade do ativo.': { en: 'Modernization to extend service life, reduce obsolescence and increase asset availability.', es: 'Modernización para ampliar la vida útil, reducir la obsolescencia y elevar la disponibilidad del activo.' },
+        'Serviços Técnicos': { en: 'Technical Services', es: 'Servicios Técnicos' },
+        'Manutenção, comissionamento, treinamento e diagnóstico com equipe especializada.': { en: 'Maintenance, commissioning, training and diagnostics with a specialized team.', es: 'Mantenimiento, puesta en servicio, capacitación y diagnóstico con equipo especializado.' },
+        'Por que escolher a MR do Brasil': { en: 'Why choose MR do Brasil', es: 'Por qué elegir MR do Brasil' },
+        'Engenharia global com resposta local para ativos que não podem parar.': { en: 'Global engineering with local response for assets that cannot stop.', es: 'Ingeniería global con respuesta local para activos que no pueden detenerse.' },
+        'A MR do Brasil combina tecnologia alemã, experiência de campo e suporte próximo para concessionárias, indústrias, EPCs e fabricantes de transformadores.': { en: 'MR do Brasil combines German technology, field experience and close support for utilities, industries, EPCs and transformer manufacturers.', es: 'MR do Brasil combina tecnología alemana, experiencia de campo y soporte cercano para utilities, industrias, EPCs y fabricantes de transformadores.' },
+        'Suporte local': { en: 'Local support', es: 'Soporte local' },
+        'Atendimento técnico em Embu das Artes, SP, com conhecimento do ambiente elétrico brasileiro.': { en: 'Technical support in Embu das Artes, São Paulo, with knowledge of the Brazilian electrical environment.', es: 'Atención técnica en Embu das Artes, São Paulo, con conocimiento del entorno eléctrico brasileño.' },
+        '40+ anos no Brasil': { en: '40+ years in Brazil', es: 'Más de 40 años en Brasil' },
+        'Histórico em operações críticas de transmissão, distribuição, geração e grandes plantas industriais.': { en: 'Track record in critical transmission, distribution, generation and large industrial plant operations.', es: 'Trayectoria en operaciones críticas de transmisión, distribución, generación y grandes plantas industriales.' },
+        'Menos tempo de parada': { en: 'Less downtime', es: 'Menos tiempo de parada' },
+        'Retrofit, monitoramento e manutenção orientados à disponibilidade, à previsibilidade e à redução do custo total.': { en: 'Retrofit, monitoring and maintenance focused on availability, predictability and total cost reduction.', es: 'Retrofit, monitoreo y mantenimiento orientados a la disponibilidad, la previsibilidad y la reducción del costo total.' },
+        'Solicite uma proposta técnica': { en: 'Request a technical proposal', es: 'Solicite una propuesta técnica' },
+        'Conte-nos sobre o seu projeto ou ativo em operação.': { en: 'Tell us about your project or operating asset.', es: 'Cuéntenos sobre su proyecto o activo en operación.' },
+        'Nossa equipe retorna com orientação para OLTC, controle, monitoramento, buchas, retrofit ou serviços técnicos especializados.': { en: 'Our team will respond with guidance on OLTC, control, monitoring, bushings, retrofit or specialized technical services.', es: 'Nuestro equipo responderá con orientación para OLTC, control, monitoreo, bushings, retrofit o servicios técnicos especializados.' },
+        'Nome completo*': { en: 'Full name*', es: 'Nombre completo*' },
+        'Empresa*': { en: 'Company*', es: 'Empresa*' },
+        'Cargo': { en: 'Job title', es: 'Cargo' },
+        'E-mail*': { en: 'Email*', es: 'Correo electrónico*' },
+        'Telefone/WhatsApp*': { en: 'Phone/WhatsApp*', es: 'Teléfono/WhatsApp*' },
+        'Qual solução você está buscando?': { en: 'Which solution are you looking for?', es: '¿Qué solución está buscando?' },
+        'Solicitar proposta técnica': { en: 'Request technical proposal', es: 'Solicitar propuesta técnica' },
+        'Campos com * são obrigatórios. Substitua o': { en: 'Fields marked with * are required. Replace the', es: 'Los campos con * son obligatorios. Sustituya el' },
+        'pelo endpoint do seu CRM ou plataforma de automação.': { en: 'with your CRM or automation platform endpoint.', es: 'por el endpoint de su CRM o plataforma de automatización.' },
+        'Confiança operacional': { en: 'Operational trust', es: 'Confianza operativa' },
+        'Critérios técnicos para uma decisão segura.': { en: 'Technical criteria for a safe decision.', es: 'Criterios técnicos para una decisión segura.' },
+        'Para transformadores críticos, a escolha do parceiro precisa reduzir incerteza: disponibilidade de suporte, conhecimento aplicado, rastreabilidade e padrões globais de qualidade.': { en: 'For critical transformers, choosing a partner must reduce uncertainty: support availability, applied knowledge, traceability and global quality standards.', es: 'Para transformadores críticos, la elección del socio debe reducir la incertidumbre: disponibilidad de soporte, conocimiento aplicado, trazabilidad y estándares globales de calidad.' },
+        'anos no Brasil': { en: 'years in Brazil', es: 'años en Brasil' },
+        'Presença local para suporte técnico e relacionamento próximo.': { en: 'Local presence for technical support and close relationships.', es: 'Presencia local para soporte técnico y relación cercana.' },
+        'Global': { en: 'Global', es: 'Global' },
+        'Referência em OLTC': { en: 'OLTC reference', es: 'Referencia en OLTC' },
+        'Conhecimento técnico alemão aplicado a redes e ativos críticos.': { en: 'German technical knowledge applied to grids and critical assets.', es: 'Conocimiento técnico alemán aplicado a redes y activos críticos.' },
+        'Local': { en: 'Local', es: 'Local' },
+        'Equipe para operação, manutenção e modernização.': { en: 'Team for operation, maintenance and modernization.', es: 'Equipo para operación, mantenimiento y modernización.' },
+        'Qualidade e processos': { en: 'Quality and processes', es: 'Calidad y procesos' },
+        'Espaço reservado para certificações, casos de sucesso e depoimentos autorizados.': { en: 'Reserved space for certifications, success stories and authorized testimonials.', es: 'Espacio reservado para certificaciones, casos de éxito y testimonios autorizados.' },
+        'Próximo passo': { en: 'Next step', es: 'Próximo paso' },
+        'Leve tecnologia MR para o seu próximo projeto.': { en: 'Bring MR technology to your next project.', es: 'Lleve la tecnología MR a su próximo proyecto.' },
+        'Solicite uma avaliação técnica e receba orientação para reduzir risco, custo e indisponibilidade.': { en: 'Request a technical assessment and receive guidance to reduce risk, cost and unavailability.', es: 'Solicite una evaluación técnica y reciba orientación para reducir riesgo, costo e indisponibilidad.' },
+        'Solicitar proposta': { en: 'Request proposal', es: 'Solicitar propuesta' },
+        'Subsidiária brasileira da Maschinenfabrik Reinhausen, com soluções para transformadores de potência e redes elétricas críticas.': { en: 'Brazilian subsidiary of Maschinenfabrik Reinhausen, with solutions for power transformers and critical electrical grids.', es: 'Subsidiaria brasileña de Maschinenfabrik Reinhausen, con soluciones para transformadores de potencia y redes eléctricas críticas.' },
+        'Serviços': { en: 'Services', es: 'Servicios' },
+        'Manutenção': { en: 'Maintenance', es: 'Mantenimiento' },
+        'Comissionamento': { en: 'Commissioning', es: 'Puesta en servicio' },
+        '© 2026 MR do Brasil. Landing page para campanhas B2B. Imagens ilustrativas; substitua por fotos oficiais quando disponíveis.': { en: '© 2026 MR do Brasil. Landing page for B2B campaigns. Illustrative images; replace with official photos when available.', es: '© 2026 MR do Brasil. Landing page para campañas B2B. Imágenes ilustrativas; sustituya por fotos oficiales cuando estén disponibles.' }
+      },
+      attrs: {
+        'MR do Brasil - início': { en: 'MR do Brasil - home', es: 'MR do Brasil - inicio' },
+        'Vídeo institucional da MR': { en: 'MR corporate video', es: 'Video institucional de MR' },
+        'Fechar vídeo': { en: 'Close video', es: 'Cerrar video' },
+        'Unidade da MR do Brasil em Embu das Artes com veículos de serviço técnico': { en: 'MR do Brasil unit in Embu das Artes with technical service vehicles', es: 'Unidad de MR do Brasil en Embu das Artes con vehículos de servicio técnico' },
+        'Equipe técnica da Reinhausen em área de montagem de comutadores OLTC': { en: 'Reinhausen technical team in an OLTC assembly area', es: 'Equipo técnico de Reinhausen en área de montaje de cambiadores OLTC' },
+        'Seu nome': { en: 'Your name', es: 'Su nombre' },
+        'Nome da empresa': { en: 'Company name', es: 'Nombre de la empresa' },
+        'Engenharia, manutenção...': { en: 'Engineering, maintenance...', es: 'Ingeniería, mantenimiento...' },
+        'seu.nome@empresa.com.br': { en: 'your.name@company.com', es: 'su.nombre@empresa.com' },
+        '(00) 00000-0000': { en: '+1 000 000 0000', es: '+00 000 000 000' }
+      },
+      option: {
+        'VACUTAP® - Comutadores a vácuo': { en: 'VACUTAP® - Vacuum tap changers', es: 'VACUTAP® - Cambiadores al vacío' },
+        'TAPCON® & ETOS® - Monitoramento e controle inteligente': { en: 'TAPCON® & ETOS® - Intelligent monitoring and control', es: 'TAPCON® & ETOS® - Monitoreo y control inteligente' },
+        'Bushings (buchas) - Porcelana e silicone': { en: 'Bushings - Porcelain and silicone', es: 'Bushings - Porcelana y silicona' },
+        'Retrofit e Modernização': { en: 'Retrofit and modernization', es: 'Retrofit y modernización' },
+        'Serviços Técnicos': { en: 'Technical services', es: 'Servicios técnicos' },
+        'Outra': { en: 'Other', es: 'Otra' }
+      }
+    };
+
+    const textSelector = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parentTag = node.parentElement?.tagName;
+        if (!node.nodeValue.trim() || ['SCRIPT', 'STYLE'].includes(parentTag)) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+
+    const translatableTextNodes = [];
+    while (textSelector.nextNode()) {
+      const node = textSelector.currentNode;
+      node._baseText = node.nodeValue;
+      translatableTextNodes.push(node);
+    }
+
+    const translatableAttrs = [];
+    document.querySelectorAll('[placeholder], [aria-label], img[alt]').forEach((element) => {
+      ['placeholder', 'aria-label', 'alt'].forEach((attr) => {
+        if (element.hasAttribute(attr)) {
+          translatableAttrs.push({ element, attr, base: element.getAttribute(attr) });
+        }
+      });
+    });
+
+    function getTranslation(dictionary, base, lang) {
+      if (lang === 'pt') return base;
+      return dictionary[base]?.[lang] || base;
+    }
+
+    function setLanguage(lang, persist = false) {
+      const safeLang = ['pt', 'en', 'es'].includes(lang) ? lang : 'pt';
+      document.documentElement.lang = safeLang === 'pt' ? 'pt-BR' : safeLang;
+      document.title = pageI18n.meta[safeLang].title;
+      document.querySelector('meta[name="description"]')?.setAttribute('content', pageI18n.meta[safeLang].description);
+
+      translatableTextNodes.forEach((node) => {
+        const base = node._baseText.trim();
+        const leading = node._baseText.match(/^\s*/)?.[0] || '';
+        const trailing = node._baseText.match(/\s*$/)?.[0] || '';
+        const source = node.parentElement?.tagName === 'OPTION' ? pageI18n.option : pageI18n.text;
+        node.nodeValue = leading + getTranslation(source, base, safeLang) + trailing;
+      });
+
+      translatableAttrs.forEach(({ element, attr, base }) => {
+        element.setAttribute(attr, getTranslation(pageI18n.attrs, base, safeLang));
+      });
+
+      document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
+        const url = new URL(link.href);
+        url.pathname = '/' + whatsappNumber;
+        url.searchParams.set('text', pageI18n.meta[safeLang].whatsapp);
+        link.href = url.toString();
+      });
+
+      document.querySelectorAll('[data-lang-switch]').forEach((button) => {
+        const isActive = button.dataset.langSwitch === safeLang;
+        button.classList.toggle('bg-white/15', isActive);
+        button.setAttribute('aria-pressed', String(isActive));
+      });
+
+      if (persist) {
+        localStorage.setItem('mrLang', safeLang);
+      }
+    }
+
+    function langFromBrowser() {
+      const browserLang = (navigator.language || '').toLowerCase();
+      if (browserLang.startsWith('pt')) return 'pt';
+      if (browserLang.startsWith('es')) return 'es';
+      return 'en';
+    }
+
+    function langFromCountry(countryCode) {
+      const code = (countryCode || '').toUpperCase();
+      const spanishCountries = ['AR', 'BO', 'CL', 'CO', 'CR', 'CU', 'DO', 'EC', 'SV', 'GQ', 'GT', 'HN', 'MX', 'NI', 'PA', 'PY', 'PE', 'PR', 'ES', 'UY', 'VE'];
+      if (['BR', 'PT', 'AO', 'MZ', 'CV', 'GW', 'ST', 'TL'].includes(code)) return 'pt';
+      if (spanishCountries.includes(code)) return 'es';
+      return 'en';
+    }
+
+    async function detectLanguage() {
+      const savedLang = localStorage.getItem('mrLang');
+      if (savedLang) {
+        setLanguage(savedLang);
+        return;
+      }
+
+      setLanguage(langFromBrowser());
+
+      try {
+        const response = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
+        if (!response.ok) return;
+        const data = await response.json();
+        setLanguage(langFromCountry(data.country_code));
+      } catch (error) {
+        setLanguage(langFromBrowser());
+      }
+    }
+
+    document.querySelectorAll('[data-lang-switch]').forEach((button) => {
+      button.addEventListener('click', () => setLanguage(button.dataset.langSwitch, true));
+    });
+
+    detectLanguage();
+
+    document.getElementById('leadForm')?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const lang = document.documentElement.lang.startsWith('pt') ? 'pt' : document.documentElement.lang;
+      const labels = pageI18n.formMessage[lang] || pageI18n.formMessage.pt;
+      const data = new FormData(form);
+      const message = [
+        labels.title,
+        '',
+        `*${labels.name}:* ${data.get('nome') || '-'}`,
+        `*${labels.company}:* ${data.get('empresa') || '-'}`,
+        `*${labels.role}:* ${data.get('cargo') || '-'}`,
+        `*${labels.email}:* ${data.get('email') || '-'}`,
+        `*${labels.phone}:* ${data.get('telefone') || '-'}`,
+        `*${labels.solution}:* ${data.get('solucao') || '-'}`,
+        '',
+        labels.footer
+      ].join('\n');
+
+      const whatsappUrl = new URL(`https://wa.me/${whatsappNumber}`);
+      whatsappUrl.searchParams.set('text', message);
+      window.open(whatsappUrl.toString(), '_blank', 'noopener');
+    });
+
+    const videoModal = document.getElementById('videoModal');
+    const fullVideoFrame = document.getElementById('fullVideoFrame');
+    const fullVideoUrl = 'https://www.youtube.com/embed/JF3-y80QiUg?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1';
+
+    function openVideoModal() {
+      if (!videoModal || !fullVideoFrame) return;
+      fullVideoFrame.src = fullVideoUrl;
+      videoModal.classList.add('is-open');
+      document.body.classList.add('overflow-hidden');
+      videoModal.requestFullscreen?.().catch(() => {});
+      setTimeout(() => {
+        videoModal.querySelector('button')?.focus();
+      }, 50);
+    }
+
+    async function closeVideoModal() {
+      if (!videoModal || !fullVideoFrame) return;
+      if (document.fullscreenElement === videoModal) {
+        await document.exitFullscreen?.().catch(() => {});
+      }
+      videoModal.classList.remove('is-open');
+      document.body.classList.remove('overflow-hidden');
+      fullVideoFrame.src = '';
+      document.getElementById('openVideoModal')?.focus();
+    }
+
+    document.getElementById('openVideoModal')?.addEventListener('click', openVideoModal);
+    document.getElementById('closeVideoModal')?.addEventListener('click', closeVideoModal);
+    videoModal?.addEventListener('click', (event) => {
+      if (event.target === videoModal) {
+        closeVideoModal();
+      }
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && videoModal?.classList.contains('is-open')) {
+        closeVideoModal();
+      }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
