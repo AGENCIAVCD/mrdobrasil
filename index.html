@@ -59,18 +59,6 @@
       background-size: 28px 28px;
     }
 
-    .video-cover iframe {
-      height: max(100%, 56.25vw);
-      left: 50%;
-      min-height: 100%;
-      min-width: 100%;
-      pointer-events: none;
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: max(100%, 177.78vh);
-    }
-
     .video-modal.is-open {
       display: flex;
     }
@@ -177,12 +165,10 @@
   <main id="conteudo">
     <section class="relative overflow-hidden bg-white px-4 py-6 sm:px-8 sm:py-12 lg:py-16">
       <div class="mx-auto max-w-[1366px]">
-        <div class="relative min-h-[680px] overflow-hidden rounded-2xl border border-hairline bg-ink shadow-soft">
-          <div class="video-cover absolute inset-0">
-            <iframe src="https://www.youtube.com/embed/JF3-y80QiUg?autoplay=1&mute=1&controls=0&rel=0&playsinline=1&loop=1&playlist=JF3-y80QiUg&modestbranding=1&enablejsapi=1" title="Vídeo institucional da MR" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-          </div>
-          <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,43,85,0.96)_0%,rgba(6,43,85,0.84)_38%,rgba(6,43,85,0.38)_72%,rgba(6,43,85,0.12)_100%)]"></div>
-          <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_24%,rgba(21,90,166,0.55),transparent_34%),linear-gradient(180deg,rgba(0,0,0,0.12),rgba(0,0,0,0.42))]"></div>
+        <div class="relative min-h-[680px] overflow-hidden rounded-2xl border border-hairline bg-hpblue shadow-soft">
+          <img src="mr-haslbach-final.webp" alt="Vista aérea da fábrica da Reinhausen" class="absolute inset-0 h-full w-full object-cover">
+          <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,43,85,0.98)_0%,rgba(6,43,85,0.9)_42%,rgba(6,43,85,0.58)_72%,rgba(6,43,85,0.35)_100%)]"></div>
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_24%,rgba(21,90,166,0.68),transparent_34%),linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.38))]"></div>
           <div class="absolute left-0 top-0 h-2 w-full bg-[linear-gradient(90deg,#0C3A6E_0%,#0C3A6E_72%,#D71920_72%,#D71920_100%)]"></div>
 
           <div class="relative flex min-h-[680px] items-end px-6 py-8 sm:px-10 lg:px-14 lg:py-12">
@@ -195,7 +181,7 @@
               <h1 class="hero-enter-2 mt-4 font-display text-[38px] font-medium leading-[1.02] tracking-[-0.04em] text-white sm:text-[60px] xl:text-[76px]">
                 Tecnologia Alemã. Suporte Local. Confiança na sua Rede Elétrica.
               </h1>
-              <p class="hero-enter-3 mt-5 max-w-2xl text-base leading-[1.55] text-white/82 sm:text-lg">
+              <p class="hero-enter-3 mt-5 max-w-2xl text-base font-medium leading-[1.55] text-white sm:text-lg">
                 Soluções para comutadores de derivação sob carga (OLTC), monitoramento, buchas, retrofit e serviços técnicos com o conhecimento global da Reinhausen e atendimento local em Embu das Artes, SP.
               </p>
 
@@ -213,18 +199,18 @@
             </div>
           </div>
 
-          <div class="absolute bottom-0 left-0 right-0 grid border-t border-white/15 bg-white/92 backdrop-blur md:grid-cols-3">
+          <div class="absolute bottom-0 left-0 right-0 grid border-t border-white/20 bg-white md:grid-cols-3">
           <div class="border-b border-hairline p-5 md:border-b-0 md:border-r">
-            <p class="text-[28px] font-medium leading-none text-ink">40+ anos</p>
-            <p class="mt-2 text-sm leading-5 text-graphite">Presença local no Brasil</p>
+            <p class="text-[28px] font-medium leading-none text-hpblue">40+ anos</p>
+            <p class="mt-2 text-sm font-medium leading-5 text-charcoal">Presença local no Brasil</p>
           </div>
           <div class="border-b border-hairline p-5 md:border-b-0 md:border-r">
-            <p class="text-[28px] font-medium leading-none text-ink">OLTC</p>
-            <p class="mt-2 text-sm leading-5 text-graphite">Liderança mundial em comutação</p>
+            <p class="text-[28px] font-medium leading-none text-hpblue">OLTC</p>
+            <p class="mt-2 text-sm font-medium leading-5 text-charcoal">Liderança mundial em comutação</p>
           </div>
           <div class="p-5">
-            <p class="text-[28px] font-medium leading-none text-ink">SP</p>
-            <p class="mt-2 text-sm leading-5 text-graphite">Suporte técnico em Embu das Artes</p>
+            <p class="text-[28px] font-medium leading-none text-hpblue">SP</p>
+            <p class="mt-2 text-sm font-medium leading-5 text-charcoal">Suporte técnico em Embu das Artes</p>
           </div>
         </div>
         </div>
