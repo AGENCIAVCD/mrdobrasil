@@ -63,6 +63,24 @@
       display: flex;
     }
 
+    .hero-bg-motion {
+      animation: heroBgDrift 22s ease-in-out infinite alternate;
+      transform-origin: center;
+    }
+
+    .hero-video-preview iframe {
+      pointer-events: none;
+    }
+
+    @keyframes heroBgDrift {
+      from {
+        transform: scale(1.03) translate3d(-1.2%, -0.8%, 0);
+      }
+      to {
+        transform: scale(1.12) translate3d(1.4%, 1%, 0);
+      }
+    }
+
     .chevron {
       clip-path: polygon(26% 0, 100% 0, 74% 100%, 0 100%);
     }
@@ -166,10 +184,19 @@
     <section class="relative overflow-hidden bg-white px-4 py-6 sm:px-8 sm:py-12 lg:py-16">
       <div class="mx-auto max-w-[1366px]">
         <div class="relative min-h-[680px] overflow-hidden rounded-2xl border border-hairline bg-hpblue shadow-soft">
-          <img src="mr-haslbach-final.webp" alt="Vista aérea da fábrica da Reinhausen" class="absolute inset-0 h-full w-full object-cover">
+          <img src="mr-haslbach-final.webp" alt="Vista aérea da fábrica da Reinhausen" class="hero-bg-motion absolute inset-0 h-full w-full object-cover">
           <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,43,85,0.98)_0%,rgba(6,43,85,0.9)_42%,rgba(6,43,85,0.58)_72%,rgba(6,43,85,0.35)_100%)]"></div>
           <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_24%,rgba(21,90,166,0.68),transparent_34%),linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.38))]"></div>
-          <div class="absolute left-0 top-0 h-2 w-full bg-[linear-gradient(90deg,#0C3A6E_0%,#0C3A6E_72%,#D71920_72%,#D71920_100%)]"></div>
+          <div class="absolute left-0 top-0 h-2 w-full bg-hpblue"></div>
+          <div class="hero-video-preview absolute bottom-32 right-8 hidden w-[360px] overflow-hidden rounded-2xl border border-white/20 bg-ink/75 shadow-modal backdrop-blur xl:block">
+            <div class="aspect-video bg-ink">
+              <iframe class="h-full w-full" src="https://www.youtube.com/embed/JF3-y80QiUg?autoplay=1&mute=1&controls=0&rel=0&playsinline=1&loop=1&playlist=JF3-y80QiUg&modestbranding=1" title="Vídeo institucional da MR" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+            <div class="flex items-center justify-between gap-4 px-4 py-3 text-white">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em]">Vídeo institucional</span>
+              <span class="flex items-center gap-2 text-xs text-white/70"><span class="h-2 w-2 animate-pulse rounded-full bg-mrred"></span>auto play</span>
+            </div>
+          </div>
 
           <div class="relative flex min-h-[680px] items-end px-6 py-8 sm:px-10 lg:px-14 lg:py-12">
             <div class="max-w-3xl pb-20 sm:pb-24 lg:pb-20">
@@ -779,6 +806,8 @@
         'Solicitar orçamento': { en: 'Request a quote', es: 'Solicitar cotización' },
         'Assistir em tela cheia': { en: 'Watch fullscreen', es: 'Ver en pantalla completa' },
         'Vídeo institucional da MR': { en: 'MR corporate video', es: 'Video institucional de MR' },
+        'Vídeo institucional': { en: 'Corporate video', es: 'Video institucional' },
+        'auto play': { en: 'auto play', es: 'auto play' },
         'Comutação resistiva a vácuo para transformadores': { en: 'Vacuum resistive switching for transformers', es: 'Conmutación resistiva al vacío para transformadores' },
         'MR do Brasil': { en: 'MR do Brasil', es: 'MR do Brasil' },
         'Tecnologia Alemã. Suporte Local. Confiança na sua Rede Elétrica.': { en: 'German Technology. Local Support. Trust for Your Electrical Grid.', es: 'Tecnología Alemana. Soporte Local. Confianza para su Red Eléctrica.' },
